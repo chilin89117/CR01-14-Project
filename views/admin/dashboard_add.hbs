@@ -1,0 +1,19 @@
+<div class="container dashboard">
+  {{>dashboard_nav}}
+  <div class="dash_body">
+    <h1>Add Review</h1>
+    <form id="review_form">
+      <div>
+        <input type="text" name="title" id="title" placeholder="Add a title">
+      </div>
+      <div>
+        <textarea type="text" name="body" id="body" placeholder="Add your review here"></textarea>
+      </div>
+      <div>
+        <input type="text" name="rating" id="rating" placeholder="Add your rating from 1 to 10">
+      </div>
+      <button type="submit">Add Review</button>
+    </form>
+  </div>
+</div>
+<script src="/js/dashboard_add.js"></script>    

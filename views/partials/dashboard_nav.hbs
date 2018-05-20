@@ -1,0 +1,16 @@
+<div class="dash_nav">
+  <div class="item">
+    <a href="/reviews"><i class="fa fa-home" aria-hidden="true"></i></a>
+  </div>
+  <div class="item">
+    <a href="/admin/dashboard/comments"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+  </div>
+  {{#if isAdmin}}
+  <div class="item">
+    <a href="/admin/dashboard/add"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+  </div>
+  {{/if}}
+  <div class="item">
+    <a href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+  </div>
+</div>

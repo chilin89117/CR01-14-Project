@@ -1,0 +1,17 @@
+<div class="container dashboard">
+  {{>dashboard_nav}}
+  <div class="dash_body">
+    <div class="dash_reviews">
+      {{#each comments}}
+      <div class="item">
+        <div class="title">
+          <span>Review Title:</span>&nbsp;
+          <a href="/reviews/{{this.reviewId}}">{{this.reviewTitle}}</a>
+        </div>
+        <div class="user_review">{{this.body}}</div>
+        <div class="user_rating">Your rating:&nbsp;{{this.rating}}/10</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

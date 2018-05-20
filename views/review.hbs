@@ -1,0 +1,50 @@
+<div class="container_review">
+  <div class="review">
+    <div class="top">
+      Published on {{dt}} by <strong>{{review.owner.uname}}</strong>
+    </div>
+    <div class="title">
+      <h2>{{review.title}}</h2>
+    </div>
+    <div class="content">{{review.body}}</div>
+    <div class="rating">
+      <div><span>Rating:</span>&nbsp;{{review.rating}}/10</div>
+    </div>
+  </div>
+  <div class="user_comments">
+    <div class="user_comments_wrapper">
+      <h3>User comments:</h3>
+      {{#each comments}}
+      <div class="item">
+        <div class="username">{{this.owner.uname}} - <span>Rating: {{this.rating}}/10</span></div>
+        <div class="user_r">{{this.body}}</div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="user_add_comments_wrapper">
+      {{#if addComment}}
+      <h3>Add your comment:</h3>
+      <form id="user_comment" data-id="{{review._id}}">
+        <div>
+          <input type="hidden" id="review_title" name="review_title" value="{{review.title}}">
+        </div>
+        <div>
+          <input type="text" id="rating" name="rating" placeholder="Add your rating from 1 to 10">
+        </div>
+        <div>
+          <textarea id="body" name="body" placeholder="Add your comment"></textarea>
+        </div>
+        <button>Add Comment</button>
+      </form>
+      {{else}}
+      <div class="register">
+        <a href="/auth/login">
+          <i class="fa fa-sign-in" aria-hidden="true"></i> 
+          Log in to add a comment</a>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<script src="/js/comment.js"></script>
